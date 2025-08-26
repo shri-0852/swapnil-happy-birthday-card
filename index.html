@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎉 Happy Birthday BABY! 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at bottom, #000428, #004e92);
+      font-family: 'Comic Sans MS', cursive;
+      color: white;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 40px;
+      text-shadow: 2px 2px 5px #ff69b4;
+      animation: bounce 2s infinite;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin: 20px auto;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    button {
+      margin: 20px 10px;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff1493;
+    }
+
+    .popup {
+      display: none;
+      background-color: white;
+      color: #333;
+      border-radius: 12px;
+      padding: 20px;
+      width: 320px;
+      margin: 30px auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      font-size: 1.2em;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .flip-container {
+      perspective: 1000px;
+      width: 450px;
+      margin: 40px auto;
+    }
+
+    .flipper {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      text-align: center;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-container:hover .flipper {
+      transform: rotateY(180deg);
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .front {
+      background-color: white;
+      position: relative;
+    }
+
+    .front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-text {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      right: 0;
+      color: black;
+      font-size: 2.1em; /* Smaller size */
+      font-family: 'Californian FB', serif; /* Custom font */
+      font-weight: bold;
+      text-shadow: 1px 1px 3px white;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .back {
+      background-color: white;
+      color: #333;
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      font-size: 1.0em;
+      line-height: 1.5em;
+      text-align: justify;
+      overflow-y: auto;
+      font-family: 'Forte', cursive; /* 🎯 Added Forte font here */
+    }
+
+    .balloon {
+      position: absolute;
+      width: 50px;
+      height: 70px;
+      background: pink;
+      border-radius: 50%;
+      animation: float 10s linear infinite;
+      z-index: 0;
+    }
+
+    .balloon:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .balloon:nth-child(2) { left: 30%; animation-delay: 2s; }
+    .balloon:nth-child(3) { left: 50%; animation-delay: 4s; }
+    .balloon:nth-child(4) { left: 70%; animation-delay: 6s; }
+    .balloon:nth-child(5) { left: 90%; animation-delay: 8s; }
+
+    .firework {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: yellow;
+      border-radius: 50%;
+      animation: fireworks 1s ease-out infinite;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+
+    audio {
+      display: none;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh); }
+      100% { transform: translateY(-200px); }
+    }
+
+    @keyframes fireworks {
+      0% { transform: scale(0); opacity: 1; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>✨Happy Birthday Swapnil🫵🏻 </h1>
+  <p> 🕛Wishing You a day that is as special in every way as you are...</p>
+   <p> Happy Birthday⚡</p>
+
+  <button onclick="showPopup()"> Click Here</button>
+  <button onclick="showGreeting()">🎉 Next</button>
+
+  <div class="popup" id="popup">
+  ✨I don’t just love you...I pray for you & I pray that every unseen battle that you have already won, and every step you take is divinely led🤞🏻and hope you get successful. Happy Birthday to my forever ❤️
+  </div>
+
+  <!-- Flip Card -->
+  <div class="flip-container" id="greeting" style="display:none;">
+    <div class="flipper">
+      <div class="front">
+        <img src="birthday.jpg.jpg" alt="Greeting Front">
+        <div class="image-text">Happy Birthday Majha Babu🫶🏻😚</div>
+      </div>
+      <div class="back">
+        🙂 I know that you don’t like this and all, but as your girlfriend I must do at least this much for you and don’t get angry on this 👍... I am very blessed to have you nana ❤️ I hope that you are also happy to have me 🤌🏻. I wish that all the luck comes to you! & I might just be the luck you've been searching for. Please treat me well & don't make me cry anytime 🤞🏻. I just know only one thing — to love you — and I am never going to stop loving you 🫶🏻. I can't promise to be the best for you but one thing I assure you that I will stay for you as long as you want me too and Haa I also promise that I will always listen to you & will be there for you in your hard times and never leave you unless you say to leave you-! If you tell then u will be getting two slaps 🧐. Please look after me and I will look after you too ☺️❤️I Love youu Forever & ever & Ever.!!!❤️🫶🏻 LOVE YOU LOTSSSS SWAPNIL🫶🏻😚 MY ONE AND ONLY SWAPNIL..!!!😚😚😚❤️ Once again Happy Birthday..🫶🏻  
+      </div>
+    </div>
+  </div>
+
+  <!-- Balloons -->
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+
+  <!-- Fireworks -->
+  <div class="firework" style="top: 40%; left: 20%;"></div>
+  <div class="firework" style="top: 60%; left: 70%; background: red;"></div>
+  <div class="firework" style="top: 30%; left: 50%; background: blue;"></div>
+
+  <!-- Stars -->
+  <script>
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+      star.style.top = `${Math.random() * 100}vh`;
+      star.style.left = `${Math.random() * 100}vw`;
+      document.body.appendChild(star);
+    }
+  </script>
+
+  <!-- Music -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4ef41a8d4b.mp3?filename=happy-birthday-to-you-piano-11947.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- JS -->
+  <script>
+    function showPopup() {
+      document.getElementById("popup").style.display = "block";
+    }
+    function showGreeting() {
+      document.getElementById("greeting").style.display = "block";
+    }
+  </script>
+</body>
+</html>

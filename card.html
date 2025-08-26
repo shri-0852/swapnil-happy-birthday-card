@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎉 Birthday Card</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(to bottom right, #ffe6f0, #ffe6ff);
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(255, 20, 147, 0.4);
+      animation: popup 0.6s ease-out;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      color: #ff1493;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    @keyframes popup {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="your-photo.jpg" alt="Birthday Photo" />
+    <h2>🎉 Happy Birthday Swapnil! 🎉</h2>
+    <p>May your day be filled with love, laughter, and endless joy! 💕🎂</p>
+  </div>
+</body>
+</html>
